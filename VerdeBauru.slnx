@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="VerdeBauru.API/VerdeBauru.API.csproj" />
+  <Project Path="VerdeBauru.Application/VerdeBauru.Application.csproj" />
+  <Project Path="VerdeBauru.Domain/VerdeBauru.Domain.csproj" />
+  <Project Path="VerdeBauru.Infrastructure/VerdeBauru.Infrastructure.csproj" />
+</Solution>
