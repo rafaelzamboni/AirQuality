@@ -10,13 +10,13 @@ O projeto foi estritamente desenhado utilizando a **Clean Architecture (Arquitet
 
 * **API (Presentation):** Controladores enxutos, injeção de dependências e documentação via Swagger. Tratamento centralizado de exceções para respostas HTTP amigáveis.
 * **Application:** Regras de negócio isoladas, mapeamento de Entidades para DTOs (Data Transfer Objects) e orquestração de serviços.
-* **Domain:** O coração do sistema. Contém as Entidades de negócio e as Interfaces (Contratos) dos repositórios. Totalmente agnóstico de infraestrutura.
-* **Infrastructure:** Implementação técnica detalhada. Contexto do Entity Framework, persistência no PostgreSQL e consumo de APIs externas.
+* **Domain:** Contém as Entidades de negócio e as Interfaces (Contratos) dos repositórios.
+* **Infrastructure:** Contexto do Entity Framework, persistência no PostgreSQL e consumo de APIs externas.
 
 ## 🚀 Principais Funcionalidades implementadas
 
-* **Integração com APIs Externas:** Consumo resiliente da API pública *Open-Meteo* utilizando `IHttpClientFactory` nativo do .NET, com formatação global de cultura (`InvariantCulture`) e desserialização robusta de JSON.
-* **Paginação de Dados Nível Banco:** Implementação de listagem paginada (`Skip` e `Take`) traduzida diretamente para SQL pelo Entity Framework Core, garantindo performance em tabelas com milhões de registros.
+* **Integração com APIs Externas:** Consumo resiliente da API pública *Open-Meteo* utilizando `IHttpClientFactory` nativo do .NET, com formatação global de cultura (`InvariantCulture`) e desserialização de JSON.
+* **Paginação de Dados Nível Banco:** Implementação de listagem paginada (`Skip` e `Take`) traduzida diretamente para SQL pelo Entity Framework Core.
 * **Idempotência e Guard Clauses:** Regras de negócio estritas que impedem a duplicação de medições para uma mesma localização no mesmo dia, garantindo a integridade dos dados no banco.
 * **Design Orientado a DTOs:** Separação clara entre os dados que transitam na web e os dados que são gravados no banco, protegendo o modelo de domínio.
 
