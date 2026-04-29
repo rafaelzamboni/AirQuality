@@ -6,12 +6,12 @@ Este projeto foi construído como um portfólio técnico para demonstrar a aplic
 
 ## 🏗️ Arquitetura e Padrões
 
-O projeto foi estritamente desenhado utilizando a **Clean Architecture (Arquitetura Limpa)**, garantindo nível de desacoplamento, testabilidade e facilidade de manutenção. A solução está dividida em quatro camadas principais:
+O projeto foi estruturado com base na Clean Architecture, priorizando baixo acoplamento, alta testabilidade e facilidade de manutenção. A solução está organizada em quatro camadas principais:
 
-* **API (Presentation):** Controladores enxutos, injeção de dependências e documentação via Swagger. Tratamento centralizado de exceções para respostas HTTP amigáveis.
-* **Application:** Regras de negócio isoladas, mapeamento de Entidades para DTOs (Data Transfer Objects) e orquestração de serviços.
-* **Domain:** Contém as Entidades de negócio e as Interfaces (Contratos) dos repositórios.
-* **Infrastructure:** Contexto do Entity Framework, persistência no PostgreSQL e consumo de APIs externas.
+* **API (Presentation):** responsável pela exposição dos endpoints, com controladores enxutos, uso de injeção de dependência e documentação via Swagger. Possui tratamento centralizado de exceções para padronização das respostas HTTP.
+* **Application:** concentra os casos de uso da aplicação, orquestrando as regras de negócio, realizando o mapeamento entre entidades e DTOs e coordenando os serviços.
+* **Domain:** núcleo da aplicação, contendo as entidades de negócio e os contratos (interfaces) que definem o comportamento esperado dos repositórios.
+* **Infrastructure:** implementação dos detalhes técnicos, incluindo o contexto do Entity Framework, persistência no PostgreSQL e integrações com APIs externas.
 
 ## 🚀 Principais Funcionalidades implementadas
 
