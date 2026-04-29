@@ -17,7 +17,7 @@ O projeto foi estruturado com base na Clean Architecture, priorizando baixo acop
 
 * **Integração com APIs externas:** implementação de consumo resiliente da API pública Open-Meteo via IHttpClientFactory, incluindo políticas de retry e timeout, padronização de cultura com InvariantCulture para consistência de dados e desserialização tipada de JSON.
 * **Paginação de dados no banco:** utilização de paginação eficiente com Skip e Take, traduzida diretamente para SQL pelo Entity Framework Core, evitando sobrecarga na aplicação.
-* **Idempotência e validação de regras:** aplicação de guard clauses e regras de negócio que impedem a duplicação de medições para a mesma localização no mesmo dia, garantindo integridade dos dados.
+* **Validação de regras:** aplicação de guard clauses e regras de negócio que impedem a duplicação de medições para a mesma localização no mesmo dia, garantindo integridade dos dados.
 * **Design orientado a DTOs:** separação entre os dados expostos na camada de API e o modelo de domínio, promovendo baixo acoplamento e maior segurança na persistência.
 
 ## 🛠️ Tecnologias Utilizadas
