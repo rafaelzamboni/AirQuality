@@ -38,18 +38,18 @@ O projeto foi estritamente desenhado utilizando a **Clean Architecture (Arquitet
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/](https://github.com/)[SEU-USUARIO-GITHUB]/VerdeBauru.git
+   git clone [https://github.com/](https://github.com/)[SEU-USUARIO-GITHUB]/AirQuality.git
 
 2. Acesse a pasta do projeto da API:
    ```bash
-   cd VerdeBauru/VerdeBauru.API
+   cd AirQuality/AirQuality.API
 
 3. Configure a sua string de conexão com o PostgreSQL no arquivo appsettings.json
 
 4. Restaure as dependências e aplique as Migrations para criar o banco de dados:
    ```bash
    dotnet restore
-   dotnet ef database update --project ../VerdeBauru.Infrastructure --startup-project .
+   dotnet ef database update --project ../AirQuality.Infrastructure --startup-project .
 
 5. Execute a aplicação
 
