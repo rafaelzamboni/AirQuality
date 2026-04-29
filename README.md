@@ -1,4 +1,4 @@
-# VerdeBauru API 🍃⛅
+# AirQuality API 🍃⛅
 
 Uma API RESTful robusta desenvolvida em **C# .NET**, projetada para monitoramento, coleta e paginação de dados climáticos e de qualidade do ar. 
 
