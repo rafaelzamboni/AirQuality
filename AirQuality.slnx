@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="AirQuality.API/AirQuality.API.csproj" />
+  <Project Path="AirQuality.Application/AirQuality.Application.csproj" />
+  <Project Path="AirQuality.Domain/AirQuality.Domain.csproj" />
+  <Project Path="AirQuality.Infrastructure/AirQuality.Infrastructure.csproj" />
+</Solution>

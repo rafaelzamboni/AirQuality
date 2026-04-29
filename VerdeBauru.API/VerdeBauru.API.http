@@ -1,6 +1,0 @@
-@VerdeBauru.API_HostAddress = http://localhost:5203
-
-GET {{VerdeBauru.API_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
