@@ -1,8 +1,8 @@
 # AirQuality API 🍃⛅
 
-Uma API RESTful robusta desenvolvida em **C# .NET**, projetada para monitoramento, coleta e paginação de dados climáticos e de qualidade do ar. 
+API RESTful desenvolvida em C# .NET para monitoramento, coleta e paginação de dados climáticos e de qualidade do ar, com foco em eficiência, escalabilidade e boas práticas de arquitetura.
 
-Este projeto foi construído como um portfólio técnico para demonstrar a aplicação de padrões corporativos de desenvolvimento de software.
+O projeto foi concebido como portfólio técnico, demonstrando a aplicação de padrões utilizados em ambientes corporativos, como Clean Architecture, consumo resiliente de APIs externas, paginação eficiente em banco de dados e separação de responsabilidades entre camadas.
 
 ## 🏗️ Arquitetura e Padrões
 
