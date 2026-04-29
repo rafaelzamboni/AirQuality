@@ -15,7 +15,7 @@ O projeto foi estritamente desenhado utilizando a **Clean Architecture (Arquitet
 
 ## 🚀 Principais Funcionalidades implementadas
 
-* **Integração com APIs Externas:** Consumo resiliente da API pública *Open-Meteo* utilizando `IHttpClientFactory` nativo do .NET, com formatação global de cultura (`InvariantCulture`) e desserialização de JSON.
+* **Integração com APIs externas: implementação de consumo resiliente da API pública Open-Meteo via IHttpClientFactory, incluindo políticas de retry e timeout, padronização de cultura com InvariantCulture para consistência de dados e desserialização tipada de JSON.
 * **Paginação de Dados Nível Banco:** Implementação de listagem paginada (`Skip` e `Take`) traduzida diretamente para SQL pelo Entity Framework Core.
 * **Idempotência e Guard Clauses:** Regras de negócio estritas que impedem a duplicação de medições para uma mesma localização no mesmo dia, garantindo a integridade dos dados no banco.
 * **Design Orientado a DTOs:** Separação clara entre os dados que transitam na web e os dados que são gravados no banco, protegendo o modelo de domínio.
