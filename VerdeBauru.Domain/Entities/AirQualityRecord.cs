@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VerdeBauru.Domain.Enums;
 
 namespace VerdeBauru.Domain.Entities
 {
@@ -17,15 +18,20 @@ namespace VerdeBauru.Domain.Entities
 
         public decimal Humidity { get; set; }
 
-        public bool IsFireAlert { get; set; }
+        public AirQualityStatus Status { get; private set; }
 
         // 'UtcNow' salva no padrão universal para evitar problemas de fuso horário.
         public DateTime RecordAt { get; set; } = DateTime.UtcNow;
 
-        public void CheckForFireAlert()
+        public void CalculateAirQuality()
         {
-            // Esses valores são apenas ilustrativos e podem ser ajustados conforme necessário.
-            IsFireAlert = (Temperature > 35 && Humidity < 20);
+            Status = (Temperature, Humidity) switch
+            {
+                ( >= 35, <= 30) => AirQualityStatus.Perigosa,
+                ( >= 30, <= 40) => AirQualityStatus.Ruim,
+                ( >= 25, <= 50) => AirQualityStatus.Moderada,
+                _ => AirQualityStatus.Boa // O underline (_) significa o "default"
+            };
         }
     }
 }

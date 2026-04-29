@@ -23,7 +23,7 @@ namespace VerdeBauru.Application.Mappers
                 Location = entity.Location ?? "Desconhecido",
                 Temperature = entity.Temperature,
                 Humidity = entity.Humidity,
-                IsFireAlert = entity.IsFireAlert,
+                Status = entity.Status.ToString(),
                 RecordAt = entity.RecordAt
             };
         }

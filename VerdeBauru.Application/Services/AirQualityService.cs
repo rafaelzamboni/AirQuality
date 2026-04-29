@@ -33,7 +33,7 @@ namespace VerdeBauru.Application.Services
             }
 
             var entity = dto.ToEntity();
-            entity.CheckForFireAlert();
+            entity.CalculateAirQuality();
 
             await _repository.AddAsync(entity);
             await _repository.SaveChangesAsync();

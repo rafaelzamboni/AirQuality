@@ -10,7 +10,7 @@ namespace VerdeBauru.Application.DTOs
         public string Location { get; set; } = string.Empty;
         public decimal Temperature { get; set; }
         public decimal Humidity { get; set; }
-        public bool IsFireAlert { get; set; }
+        public string Status { get; set; }
         public DateTime RecordAt { get; set; }
     }
 }
