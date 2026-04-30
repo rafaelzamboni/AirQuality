@@ -2,7 +2,7 @@
 
 namespace AirQuality.Application.DTOs
 {
-    // O <T> significa que ela é Genérica. Pode paginar Qualidade do Ar, Chamados, Usuários...
+    // O <T> significa que ela é Genérica.
     public class PagedResponseDTO<T>
     {
         public IEnumerable<T> Data { get; set; } = new List<T>();

@@ -28,13 +28,12 @@ namespace AirQuality.Infrastructure.Repositories
 
         public async Task<AirQualityRecord?> GetByIdAsync(Guid id)
         {
-            // Busca um registro específico pelo ID
             return await _context.AirQualityRecords.FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<(IEnumerable<AirQualityRecord> Items, int TotalCount)> GetPagedAsync(int page, int pageSize, string? location)
         {
-            // AsQueryable "prepara" a query, mas não vai no banco ainda!
+            // AsQueryable prepara a query, mas não vai no banco ainda
             var query = _context.AirQualityRecords.AsQueryable();
 
             // Filtro por localização (se enviado)
@@ -62,7 +61,6 @@ namespace AirQuality.Infrastructure.Repositories
 
         public async Task<bool> AnyForLocationTodayAsync(string location)
         {
-            // Pegamos o início do dia de hoje (00:00:00)
             var today = DateTime.UtcNow.Date;
 
             // O EF Core vai traduzir isso para um comando "EXISTS" no SQL

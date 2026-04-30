@@ -11,20 +11,18 @@ namespace AirQuality.API.Controllers
     {
         private readonly IAirQualityService _service;
 
-        // Injeção de Dependência: A API pede o "Gerente" (Service)
+        // Injeção de Dependência
         public AirQualityController(IAirQualityService service)
         {
             _service = service;
         }
 
-        // Método POST para receber o JSON do sensor
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] AirQualityRequestDTO request)
         {
-            // O Controller não tem regra de negócio. Ele só passa a bola para o Service.
             var response = await _service.AddRecordAsync(request);
 
-            // Retorna o HTTP Status 201 (Created) e o DTO com o resultado (incluindo se teve alerta de fogo)
+            // Retorna o HTTP Status 201 (Created) e o DTO com o resultado
             return Created(string.Empty, response);
         }
 
@@ -53,8 +51,6 @@ namespace AirQuality.API.Controllers
             }
             catch (Exception ex)
             {
-                // Se o Service lançar nosso erro de "Já existe", capturamos aqui!
-                // Retorna um HTTP 400 com um JSON limpo, sem quebrar o Swagger.
                 return BadRequest(new { Erro = ex.Message });
             }
         }

@@ -19,7 +19,7 @@ namespace AirQuality.Infrastructure.ExternalServices
 
         public async Task<ExternalWeatherResponseDTO> GetCurrentWeatherAsync(double latitude, double longitude)
         {
-            // formate isso usando as regras globais da computação, não importa em qual país este servidor esteja rodando
+            // Formata usando as regras globais da computação, não importa em qual país este servidor esteja rodando
             string url = $"https://api.open-meteo.com/v1/forecast?latitude={latitude.ToString(CultureInfo.InvariantCulture)}&longitude={longitude.ToString(CultureInfo.InvariantCulture)}&current=temperature_2m,relative_humidity_2m";
             var client = _httpClientFactory.CreateClient();
 
@@ -28,8 +28,7 @@ namespace AirQuality.Infrastructure.ExternalServices
 
             var jsonString = await response.Content.ReadAsStringAsync();
 
-            // --- A MÁGICA QUE FALTAVA AQUI ---
-            // Isso avisa o C# para ignorar se a letra é maiúscula ou minúscula
+            // Ignora se a letra é maiúscula ou minúscula
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
             return JsonSerializer.Deserialize<ExternalWeatherResponseDTO>(jsonString, options);

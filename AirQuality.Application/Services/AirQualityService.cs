@@ -43,16 +43,16 @@ namespace AirQuality.Application.Services
 
         public async Task<PagedResponseDTO<AirQualityResponseDTO>> GetPagedRecordsAsync(int page, int pageSize, string? location)
         {
-            // 1. Pega os dados crus do Banco de Dados (Entidades)
+            //Pega os dados crus do Banco de Dados
             var (items, totalCount) = await _repository.GetPagedAsync(page, pageSize, location);
 
-            // 2. Converte a lista de Entidades para a lista de DTOs (Proteção dos dados)
+            //Converte a lista de Entidades para a lista de DTOs
             var dtoList = items.Select(x => x.ToDTO()).ToList();
 
-            // 3. Calcula o total de páginas (Ex: 25 itens / 10 por página = 3 páginas)
+            //Calcula o total de páginas
             var totalPages = (int)Math.Ceiling(totalCount / (double)pageSize);
 
-            // 4. Monta a resposta final
+            //Monta a resposta final
             return new PagedResponseDTO<AirQualityResponseDTO>
             {
                 Data = dtoList,

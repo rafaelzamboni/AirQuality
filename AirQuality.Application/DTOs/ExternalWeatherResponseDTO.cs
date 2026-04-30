@@ -7,7 +7,7 @@ namespace AirQuality.Application.DTOs
 {
     public class ExternalWeatherResponseDTO
     {
-        // Procura a palavra "current" no JSON e colocar aqui dentro
+        // Procura a palavra "current" no JSON
         [JsonPropertyName("current")]
         public CurrentWeatherDTO Current { get; set; }
 
